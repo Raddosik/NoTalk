@@ -2,7 +2,7 @@ local Debug = false
 local f = CreateFrame("Frame")
 
 local function CloseTalkingHead()
-    TalkingHeadFrame:CloseImmediately()
+    TalkingHeadFrame:Hide()
 end
 
 local function CheckVerboseMessage()
