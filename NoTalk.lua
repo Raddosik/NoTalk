@@ -1,9 +1,11 @@
 local Debug = false
 local f = CreateFrame("Frame")
 
-local function CloseTalkingHead()
-    TalkingHeadFrame:Hide()
-end
+function CloseTalkingHead()
+	--TalkingHeadFrame:CloseImmediately(); pre 10.0.7
+	TalkingHeadFrame:Hide()
+	C_Timer.After(0, function() StopSound(TalkingHeadFrame.voHandle) end);
+	end
 
 local function CheckVerboseMessage()
     if NoTalkVerbose == true then
